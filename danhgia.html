@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chấm điểm công cụ số trong dạy học theo tiêu chí có trọng số.">
+    <title>Đánh giá công cụ | Dạy học số</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="sosanh.html"><span class="brand-mark">DS</span><span>DẠY HỌC SỐ<small>Chọn công cụ phù hợp</small></span></a>
+            <nav aria-label="Điều hướng chính">
+                <a href="sosanh.html">So sánh công cụ</a>
+                <a class="active" href="danhgia.html">Đánh giá công cụ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">BỘ CÔNG CỤ ĐÁNH GIÁ</p>
+            <h1>Chấm điểm công cụ theo nhu cầu</h1>
+            <p>Chọn điểm cho từng tiêu chí. Tổng điểm có trọng số và thứ tự kết quả sẽ được cập nhật ngay khi bạn thay đổi dữ liệu.</p>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div><p class="eyebrow">HƯỚNG DẪN</p><h2>Cách chấm điểm</h2></div>
+                <span class="count-badge">Thang điểm 1–5</span>
+            </div>
+            <div class="scale-grid">
+                <div><strong>1</strong><span>Chưa đáp ứng</span></div>
+                <div><strong>2</strong><span>Đáp ứng ít</span></div>
+                <div><strong>3</strong><span>Đáp ứng trung bình</span></div>
+                <div><strong>4</strong><span>Đáp ứng tốt</span></div>
+                <div><strong>5</strong><span>Đáp ứng rất tốt</span></div>
+            </div>
+            <p class="notice"><strong>Lưu ý quan trọng:</strong> Điểm số và thứ tự xếp hạng chỉ mang tính tham khảo, dựa trên điểm do người dùng nhập và trọng số minh họa. Đây không phải xếp hạng tuyệt đối; hãy điều chỉnh theo mục tiêu bài học, điều kiện thiết bị, khả năng tiếp cận và ngân sách thực tế.</p>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div><p class="eyebrow">BƯỚC 1</p><h2>Thiết lập trọng số</h2></div>
+                <span class="count-badge" id="weight-total">Tổng trọng số: 100%</span>
+            </div>
+            <p class="muted">Bạn có thể chỉnh trọng số. Tổng trọng số nên bằng 100%; kết quả vẫn được tính theo các trọng số hiện tại.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th scope="col">Tiêu chí</th><th scope="col">Ý nghĩa</th><th scope="col">Trọng số (%)</th></tr></thead>
+                    <tbody id="weight-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div><p class="eyebrow">BƯỚC 2</p><h2>Nhập điểm đánh giá</h2></div>
+                <button class="button button-light" id="reset-scores" type="button">Khôi phục điểm mẫu</button>
+            </div>
+            <p class="muted">Điểm mẫu ban đầu chỉ để minh họa. Chọn điểm từ 1 đến 5 cho từng tiêu chí của mỗi công cụ.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead id="score-head"></thead>
+                    <tbody id="score-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div><p class="eyebrow">KẾT QUẢ TỨC THỜI</p><h2>Tổng điểm và thứ tự tham khảo</h2></div>
+                <span class="count-badge">Tối đa 5,00 điểm</span>
+            </div>
+            <div id="results" class="results-grid"></div>
+            <p class="notice">Cách tính: tổng điểm = Σ (điểm tiêu chí × trọng số tiêu chí) / tổng trọng số. Điểm cuối cùng nằm trong khoảng 1–5 khi tất cả tiêu chí đều được chấm điểm.</p>
+        </section>
+    </main>
+
+    <footer><div class="container footer-inner"><span>Website giới thiệu và so sánh công cụ số trong dạy học</span><span>Thiết kế phục vụ học tập</span></div></footer>
+</body>
+</html>
