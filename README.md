@@ -49,7 +49,7 @@ Nhu cầu của giáo viên(Muốn tạo bài kiểm tra nhanh cho học sinh) =
 8.5. Phù hợp kiến thức môn học: Có thể sử dụng HTML, CSS, JavaScript, mảng đối tượng, hàm, sự kiện và thao tác DOM.
 9. Thành viên nhóm
 1. Họ tên: Vừ Thị Cá.
-- Tài khoản github: cavtk66sptin-hub
+- Tài khoản github: cavtk66sptin
 - Vai trò: Coordinator.
 - Nhiệm vụ: Trang chủ, điều phối và quản lý GitHub
 2. Cà Thị Phương Linh.
