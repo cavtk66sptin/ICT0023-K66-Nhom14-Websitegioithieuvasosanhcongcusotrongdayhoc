@@ -1,52 +1,36 @@
-v0.4-tuong-tac — Công cụ số trong dạy học
-1. Giới thiệu
-Đây là website tĩnh của Nhóm Học Tập 14, giới thiệu và hỗ trợ người dùng tìm kiếm, so sánh các công cụ số phục vụ dạy học. Phiên bản v0.4-tương-tác phát triển từ định hướng giao diện của v0.3-giao-dien, tiếp tục sử dụng phong cách xanh teal và bổ sung các chức năng tương tác để người dùng tra cứu và cân nhắc công cụ phù hợp.
-Đối tượng hướng tới là giáo viên và sinh viên sư phạm. Nội dung công cụ là dữ liệu mẫu được lưu trong JavaScript; thông tin về giá và tính năng có thể thay đổi theo thời gian, vì vậy nên kiểm tra lại trên trang chính thức của từng công cụ.
+ `v1.0-final` Website Giới thiệu & So sánh Công cụ số trong Dạy học
 
-2. Cấu trúc thư mục
-index.html — Trang chủ, giới thiệu mục tiêu website, các điểm nổi bật và liên kết khám phá.
-congcu.html — Thư viện công cụ; hỗ trợ tìm kiếm, lọc theo danh mục, sắp xếp và xem thông tin chi tiết.
-sosanh.html — Trang lựa chọn và so sánh các công cụ.
-danhgia.html — Trang chấm điểm công cụ theo tiêu chí, điều chỉnh trọng số và xem thứ hạng.
-huongdan.html — Trang hướng dẫn sử dụng và câu hỏi thường gặp.
-lienhe.html — Biểu mẫu liên hệ có kiểm tra dữ liệu ở phía trình duyệt.
-style.css — Quy tắc giao diện, bố cục, màu sắc và hiển thị responsive.
-script.js — Dữ liệu công cụ mẫu và xử lý các chức năng tương tác.
-assets/logo.png — Logo của Nhóm 14.
-CONTRIBUTIONS.md — Mô tả đóng góp/phân công của thành viên.
-3. Chức năng chính
-Điều hướng: liên kết giữa sáu trang của website.
-Tra cứu công cụ: nhập từ khóa, lọc theo danh mục và sắp xếp danh sách.
-Xem chi tiết: mở thông tin về mục đích sử dụng, ưu điểm, điểm cần lưu ý, chi phí tham khảo và độ dễ sử dụng.
-So sánh: chọn các công cụ để đối chiếu thông tin.
-Đánh giá: chấm điểm theo tiêu chí, thay đổi trọng số và xem kết quả xếp hạng dựa trên dữ liệu mẫu.
-Hướng dẫn/FAQ: đọc hướng dẫn và mở/đóng câu trả lời thường gặp.
-Liên hệ: kiểm tra định dạng họ tên, email và nội dung trước khi hiển thị thông báo kết quả.
-4. Công nghệ sử dụng
-HTML5 và CSS3.
-JavaScript cho dữ liệu mẫu và xử lý tương tác.
-Bootstrap 5.3.3 cho lưới bố cục responsive và các thành phần giao diện.
-jQuery 3.7.1 hỗ trợ cập nhật kết quả tìm kiếm/lọc.
-AOS cho hiệu ứng khi cuộn.
-SweetAlert2 cho thông báo.
-Font Awesome cho biểu tượng.
-Swiper được nạp qua CDN để hỗ trợ thành phần trình chiếu nếu được sử dụng trong giao diện.
-Các thư viện được tải qua CDN nên cần kết nối Internet khi chạy thử.
+Nhóm:14   
+Lớp: K66 – ĐHSP Tin học, Trường Đại học Tây Bắc  
+Đối tượng hướng tới: Giáo viên và Sinh viên sư phạm.  
+Mục tiêu: Hỗ trợ tìm kiếm, đối chiếu và lựa chọn công cụ số phù hợp với từng mục tiêu và hoạt động dạy học.
 
-5. Giới hạn và quyền riêng tư
-Đây là website demo tĩnh; dữ liệu công cụ được khai báo cục bộ trong script.js.
-Không có đăng nhập, backend hoặc cơ sở dữ liệu.
-Biểu mẫu liên hệ chỉ kiểm tra dữ liệu trong trình duyệt, không gửi thông tin tới máy chủ; nội dung không được lưu lại sau khi tải lại trang.
-Kết quả đánh giá phụ thuộc vào dữ liệu mẫu và trọng số người dùng chọn, không phải kết luận độc lập về chất lượng thực tế của công cụ.
-Giá, gói miễn phí và tính năng của các nền tảng có thể thay đổi; hãy xác minh trên website chính thức trước khi sử dụng.
-6. Đóng góp
-Thông tin về vai trò và phân công của các thành viên được mô tả trong `CONTRIBUTIONS.md`. 
+# 1. Cấu trúc bộ trang web (6 Trang)
 
-7. Tài liệu tham khảo
-Tài liệu Bootstrap: https://getbootstrap.com/docs/5.3/
-Tài liệu jQuery: https://api.jquery.com/
-Tài liệu AOS: https://michalsnik.github.io/aos/
-SweetAlert2: https://sweetalert2.github.io/
-Font Awesome: https://fontawesome.com/
+- `index.html` (Trang chủ): Giới thiệu mục tiêu dự án, các nhóm chức năng chính và danh sách 4 công cụ nổi bật.
+- `congcu.html` (Thư viện công cụ): Không gian tra cứu 13+ công cụ số với bộ lọc theo danh mục, ô tìm kiếm thời gian thực (jQuery Live Search), sắp xếp và Modal xem chi tiết hồ sơ công cụ.
+- `sosanh.html` (So sánh công cụ): Cho phép chọn từ 2 công cụ trở lên để tạo bảng so sánh đối chiếu trực quan về tính năng, ưu/nhược điểm và chi phí.
+- `danhgia.html` (Bảng đánh giá có trọng số): Cho phép tùy chỉnh điểm số (thang 1–5) và trọng số từng tiêu chí để tự động tính điểm trung bình trọng số và xếp hạng tức thì.
+- `huongdan.html` (Hướng dẫn & FAQ): Quy trình 4 bước sử dụng website, ví dụ tình huống áp dụng thực tế và bộ câu hỏi thường gặp dạng Accordion.
+- `lienhe.html` (Liên hệ & Phản hồi): Biểu mẫu gửi góp ý có kiểm tra chuẩn định dạng họ tên (viết hoa đầu từ), email và độ dài tin nhắn (tích hợp SweetAlert2).
 
+## 2. Thư viện & Công nghệ sử dụng
+- HTML5 & CSS3: Cấu trúc ngữ nghĩa (Semantic HTML), giao diện phản hồi Responsive chuẩn hóa trong `style.css`.
+- JavaScript (ES6+) & jQuery 3.7.1: Xử lý toàn bộ logic tính toán, so sánh, lọc dữ liệu động và bắt lỗi biểu mẫu trong `script.js`.
+- Bootstrap 5.3.3: Hệ thống lưới (Grid), Navbar, Modal, Card, Accordion và Form styling.
+- Font Awesome 6.7.2 & AOS (Animate On Scroll): Bộ biểu tượng minh họa và hiệu ứng cuộn trang mượt mà.
+- SweetAlert2: Hiển thị thông báo Toast kết quả kiểm tra biểu mẫu thân thiện.
 
+## 3. Các chức năng nghiệm thu chính
+1. Hiển thị dữ liệu từ mảng (`tools`): Render tự động toàn bộ thẻ công cụ và Modal từ dữ liệu JavaScript.
+2. Tìm kiếm & Lọc động: Tìm kiếm theo từ khóa và lọc danh mục không cần tải lại trang.
+3. Tính điểm & So sánh tức thời: Bảng so sánh và xếp hạng đánh giá cập nhật ngay khi người dùng thao tác.
+4. Kiểm tra dữ liệu Form: Bắt lỗi chính xác từng trường nhập liệu kèm thông báo SweetAlert2.
+
+## 4. Hướng dẫn chạy & Kiểm thử
+1. Giải nén thư mục dự án và mở trực tiếp file `index.html` trên trình duyệt (hoặc dùng Live Server trong VS Code).
+2. Yêu cầu thiết bị có kết nối Internet để nạp các thư viện CSS/JS qua CDN.
+3. Để xuất bản công khai: Tải toàn bộ mã nguồn lên repository GitHub và bật tính năng **GitHub Pages** từ nhánh `main`.
+
+## 5. Quyền riêng tư & Giới hạn
+- Sản phẩm hoàn toàn chạy phía Trình duyệt (Client-side), `không thu thập, không lưu trữ` bất kỳ thông tin hay dữ liệu cá nhân nào của người dùng.
