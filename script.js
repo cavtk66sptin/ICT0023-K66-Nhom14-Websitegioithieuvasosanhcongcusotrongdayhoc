@@ -96,6 +96,17 @@ function setupContactForm() {
     status.classList.remove('status-error', 'status-success');
     status.classList.add(isSuccess ? 'status-success' : 'status-error');
     status.textContent = message;
+    if (window.Swal) {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: isSuccess ? 'success' : 'error',
+        title: message,
+        showConfirmButton: false,
+        timer: isSuccess ? 2800 : 3800,
+        timerProgressBar: true
+      });
+    }
   }
 
   form.addEventListener('submit', event => {
@@ -155,4 +166,123 @@ document.addEventListener('DOMContentLoaded', () => {
   renderRatings();
   setupContactForm();
   setupFaq();
+  setupToolCatalog();
 });
+
+
+const toolMeta = {
+  'Canva': {icon:'fa-palette', tone:'symbol-purple', url:'https://www.canva.com/'},
+  'PowerPoint': {icon:'fa-file-powerpoint', tone:'symbol-orange', url:'https://www.microsoft.com/microsoft-365/powerpoint'},
+  'Google Forms': {icon:'fa-list-check', tone:'symbol-green', url:'https://forms.google.com/'},
+  'Azota': {icon:'fa-clipboard-check', tone:'symbol-blue', url:'https://azota.vn/'},
+  'Mentimeter': {icon:'fa-chart-pie', tone:'symbol-purple', url:'https://www.mentimeter.com/'},
+  'Padlet': {icon:'fa-note-sticky', tone:'symbol-orange', url:'https://padlet.com/'},
+  'Google Classroom': {icon:'fa-chalkboard-user', tone:'symbol-green', url:'https://classroom.google.com/'},
+  'Microsoft Teams': {icon:'fa-users', tone:'symbol-blue', url:'https://www.microsoft.com/microsoft-teams/'},
+  'ChatGPT': {icon:'fa-brain', tone:'symbol-green', url:'https://chatgpt.com/'},
+  'Google Gemini': {icon:'fa-wand-magic-sparkles', tone:'symbol-blue', url:'https://gemini.google.com/'},
+  'Quizizz': {icon:'fa-gamepad', tone:'symbol-orange', url:'https://quizizz.com/'},
+  'Kahoot!': {icon:'fa-bolt', tone:'symbol-purple', url:'https://kahoot.com/'}
+};
+
+function setupToolCatalog() {
+  const grid = document.querySelector('#tool-grid');
+  if (!grid) return;
+  const search = document.querySelector('#tool-search');
+  const category = document.querySelector('#tool-category');
+  const sort = document.querySelector('#tool-sort');
+  const count = document.querySelector('#tool-count');
+  const empty = document.querySelector('#tool-empty');
+  const modalElement = document.querySelector('#tool-detail-modal');
+  const modal = modalElement && window.bootstrap ? bootstrap.Modal.getOrCreateInstance(modalElement) : null;
+  let quickCategory = 'all';
+
+  function getVisibleTools() {
+    const keyword = (search.value || '').trim().toLocaleLowerCase('vi');
+    let result = tools.filter(tool => {
+      const text = [tool.name, tool.group, tool.purpose, tool.pros, tool.cons, tool.cost].join(' ').toLocaleLowerCase('vi');
+      return (!keyword || text.includes(keyword)) &&
+        (category.value === 'all' || tool.group === category.value) &&
+        (quickCategory === 'all' || tool.group === quickCategory);
+    });
+    if (sort.value === 'name') result.sort((a,b) => a.name.localeCompare(b.name, 'vi'));
+    if (sort.value === 'ease') result.sort((a,b) => b.ease - a.ease || a.name.localeCompare(b.name, 'vi'));
+    return result;
+  }
+
+  function openDetails(tool) {
+    const meta = toolMeta[tool.name] || {url:'#'};
+    document.querySelector('#tool-modal-title').textContent = tool.name;
+    document.querySelector('#tool-modal-body').innerHTML = `
+      <div class="detail-list">
+        <div class="detail-item"><strong><i class="fa-solid fa-bullseye me-2"></i>Mục đích sử dụng</strong><p>${tool.purpose}</p></div>
+        <div class="detail-item"><strong><i class="fa-solid fa-circle-check me-2"></i>Ưu điểm</strong><p>${tool.pros}</p></div>
+        <div class="detail-item"><strong><i class="fa-solid fa-circle-exclamation me-2"></i>Điểm cần lưu ý</strong><p>${tool.cons}</p></div>
+        <div class="detail-item"><strong><i class="fa-solid fa-wallet me-2"></i>Chi phí tham khảo</strong><p>${tool.cost}</p></div>
+        <div class="detail-item"><strong><i class="fa-solid fa-gauge-high me-2"></i>Độ dễ sử dụng</strong><p>${tool.ease}/5</p></div>
+      </div>`;
+    const official = document.querySelector('#tool-official-link');
+    official.href = meta.url || '#';
+    official.classList.toggle('d-none', !meta.url || meta.url === '#');
+    if (modal) modal.show();
+    else if (window.Swal) Swal.fire({title:tool.name, text:tool.purpose, icon:'info'});
+  }
+
+  function render() {
+    const result = getVisibleTools();
+    count.textContent = `${result.length} / ${tools.length} công cụ`;
+    empty.classList.toggle('d-none', result.length !== 0);
+    grid.classList.toggle('d-none', result.length === 0);
+    grid.innerHTML = result.map((tool, index) => {
+      const meta = toolMeta[tool.name] || {icon:'fa-book-open',tone:'symbol-blue'};
+      const dots = [1,2,3,4,5].map(n => `<span class="${n <= tool.ease ? 'filled' : ''}"></span>`).join('');
+      return `<div class="col-sm-6 col-lg-4 tool-card-wrap" data-aos="fade-up" data-aos-delay="${Math.min(index%3*60,120)}">
+        <article class="tool-card" tabindex="0" role="button" aria-label="Xem chi tiết ${tool.name}" data-tool-name="${tool.name}">
+          <div class="tool-card-top"><span class="tool-symbol ${meta.tone}"><i class="fa-solid ${meta.icon}"></i></span><span class="tool-category">${tool.group}</span></div>
+          <h3>${tool.name}</h3><p>${tool.purpose}</p>
+          <div class="ease-label">Độ dễ sử dụng <strong>${tool.ease}/5</strong><div class="ease-dots" aria-label="${tool.ease} trên 5">${dots}</div></div>
+          <div class="tool-card-bottom"><span><i class="fa-regular fa-circle-info me-1"></i>Xem thông tin</span><button type="button" tabindex="-1" aria-hidden="true">Chi tiết <i class="fa-solid fa-arrow-right ms-1"></i></button></div>
+        </article></div>`;
+    }).join('');
+    if (window.AOS) AOS.refreshHard();
+  }
+
+  function reset() {
+    search.value = '';
+    category.value = 'all';
+    sort.value = 'featured';
+    quickCategory = 'all';
+    document.querySelectorAll('.category-pill').forEach(btn => btn.classList.toggle('active', btn.dataset.category === 'all'));
+    render();
+  }
+
+  // jQuery handles live search and filter changes; results update without reloading the page.
+  if (window.jQuery) {
+    window.jQuery('#tool-search').on('input', render);
+    window.jQuery('#tool-category, #tool-sort').on('change', render);
+  } else {
+    search.addEventListener('input', render);
+    category.addEventListener('change', render);
+    sort.addEventListener('change', render);
+  }
+  document.querySelectorAll('.category-pill').forEach(button => button.addEventListener('click', () => {
+    quickCategory = button.dataset.category;
+    category.value = quickCategory;
+    document.querySelectorAll('.category-pill').forEach(item => item.classList.toggle('active', item === button));
+    render();
+  }));
+  document.querySelector('#reset-tool-filters')?.addEventListener('click', reset);
+  document.querySelector('#empty-reset')?.addEventListener('click', reset);
+  grid.addEventListener('click', event => {
+    const card = event.target.closest('[data-tool-name]');
+    if (card) openDetails(tools.find(tool => tool.name === card.dataset.toolName));
+  });
+  grid.addEventListener('keydown', event => {
+    const card = event.target.closest('[data-tool-name]');
+    if (card && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      openDetails(tools.find(tool => tool.name === card.dataset.toolName));
+    }
+  });
+  render();
+}
