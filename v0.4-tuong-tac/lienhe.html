@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - So sánh công cụ số trong dạy học</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top" aria-label="Điều hướng chính">
+<div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html"><img src="assets/logo.png" alt="Logo Nhóm 14" class="brand-logo"><span>NHÓM 14 <small class="brand-subtitle">CÔNG CỤ SỐ TRONG DẠY HỌC</small></span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Mở menu"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="mainNav"><div class="navbar-nav ms-auto align-items-lg-center">
+<a class="nav-link" href="index.html"><i class="fa-solid fa-house me-1"></i>Trang chủ</a><a class="nav-link" href="congcu.html"><i class="fa-solid fa-layer-group me-1"></i>Công cụ</a><a class="nav-link" href="sosanh.html"><i class="fa-solid fa-scale-balanced me-1"></i>So sánh</a><a class="nav-link" href="danhgia.html"><i class="fa-solid fa-chart-simple me-1"></i>Đánh giá</a><a class="nav-link" href="huongdan.html"><i class="fa-regular fa-circle-question me-1"></i>Hướng dẫn</a><a class="nav-link" href="lienhe.html"><i class="fa-regular fa-envelope me-1"></i>Liên hệ</a>
+</div></div></div></div></nav>
+
+    <main>
+        <section class="contact-section">
+            <div class="container">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-5">
+                    <p class="eyebrow">KẾT NỐI VỚI CHÚNG MÌNH</p>
+                    <h2 class="contact-title">Bạn có câu hỏi hoặc ý tưởng?</h2>
+                    <p class="muted-text">Hãy để lại lời nhắn. Nhóm sẽ tiếp nhận thông tin ngay!</p>
+                </div>
+                <div class="col-lg-7">
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6"><label for="full-name" class="form-label">Họ và tên </label><input id="full-name" name="full-name" class="form-control" type="text" placeholder="Nhập họ tên" required></div>
+                            <div class="col-md-6"><label for="email" class="form-label">Email </label><input id="email" name="email" class="form-control" type="email" placeholder="name@example.com" required></div>
+                            <div class="col-12"><label for="message" class="form-label">Nội dung </label><textarea id="message" name="message" class="form-control" rows="5" placeholder="Viết lời nhắn của bạn..." required></textarea></div>
+                            <div class="col-12"><button class="btn btn-brand btn-lg rounded-pill w-100" type="submit">Gửi thông tin <span aria-hidden="true">→</span></button><div id="form-status" class="mt-3" role="status" aria-live="polite"></div></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+  <div class="container footer-main">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html"><img src="assets/logo.png" alt="Logo Nhóm 14"><span><strong>NHÓM 14</strong><small>Công cụ số trong dạy học</small></span></a>
+      <p>Đồng hành cùng giáo viên và sinh viên sư phạm trong hành trình thiết kế bài giảng, tổ chức hoạt động và đánh giá học tập bằng công nghệ.</p>
+    </div>
+    <div><h2>Khám phá</h2><a href="congcu.html">Thư viện công cụ</a><a href="sosanh.html">So sánh công cụ</a><a href="danhgia.html">Bảng đánh giá</a></div>
+    <div><h2>Hỗ trợ</h2><a href="huongdan.html">Hướng dẫn & FAQ</a><a href="lienhe.html">Liên hệ – phản hồi</a><a href="index.html#gioithieu">Về website</a></div>
+    <div><h2>Liên hệ</h2><p><i class="fa-regular fa-envelope me-2"></i><a href="mailto:ngoctb.k66sptin@utb.edu.vn">ngoctb.k66sptin@utb.edu.vn</a></p><p class="footer-note">Sản phẩm phục vụ học tập, không thu thập hay lưu trữ dữ liệu người dùng.</p></div>
+  </div>
+  <div class="footer-bottom"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© 2026 Nhóm Học Tập 14</span><span>Thiết kế có trách nhiệm · Học tập số dễ tiếp cận</span></div></div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>document.addEventListener('DOMContentLoaded',function(){if(window.AOS){AOS.init({duration:650,once:true,offset:55});}});</script>
+    <script src="script.js"></script>
+</body>
+</html>
