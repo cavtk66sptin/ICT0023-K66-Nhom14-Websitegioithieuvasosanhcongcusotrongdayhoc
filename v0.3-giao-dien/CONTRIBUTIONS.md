@@ -16,7 +16,7 @@ Nhiệm vụ dự kiến: Mô tả định hướng từng trang, khả năng re
 3. Nguyễn Nhật Minh.
 Tài khoản github:
 Vai trò: Bố cục và trải nghiệm sử dụng
-Nhiệm vụ dự kiến: Sử dụng Lên ý tưởng bố cục cho danh mục công cụ, trang so sánh và trang đánh giá; đề xuất cách trình bày bằng Bootstrap Grid, Card, bảng so sánh và các thành phần tương tác phù hợp.(Không làm)
+Nhiệm vụ dự kiến: Sử dụng Lên ý tưởng bố cục cho danh mục công cụ, trang so sánh và trang đánh giá; đề xuất cách trình bày bằng Bootstrap Grid, Card, bảng so sánh và các thành phần tương tác phù hợp.(Không làm Minh không làm Cá Và Ngọc đã phải hoàn thiện))
 
 
 4. Trần Bích Ngọc.
