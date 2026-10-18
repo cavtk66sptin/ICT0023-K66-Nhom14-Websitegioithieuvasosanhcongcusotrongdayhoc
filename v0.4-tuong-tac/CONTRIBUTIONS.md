@@ -8,17 +8,17 @@ Tài khoản github: cavtk66sptin-hub
 Vai trò: Nội dung và trang chủ
 Nhiệm vụ dự kiến: Tổng hợp, rà soát nội dung giới thiệu website; hoàn thiện trang index.html với mục tiêu, công cụ nổi bật và liên kết điều hướng tới các trang chức năng.
 
-2. Cà Thị Phương Linh.
+3. Cà Thị Phương Linh.
 Tài khoản github: linhctpk66sptin-cdt
 Vai trò: Chức năng tương tác	
 Nhiệm vụ dự kiến: Phối hợp triển khai và kiểm tra JavaScript trong script.js, gồm tìm kiếm công cụ theo từ khóa, lọc danh mục, sắp xếp kết quả, mở thông tin chi tiết, so sánh công cụ và tính điểm đánh giá theo tiêu chí.
 
-3. Nguyễn Nhật Minh.
+4. Nguyễn Nhật Minh.
 Tài khoản github:
 Vai trò: Các trang nội dung và tài liệu
-Nhiệm vụ dự kiến: Rà soát các trang congcu.html, sosanh.html, danhgia.html, huongdan.html, lienhe.html; cập nhật tài liệu README.md, hướng dẫn chạy thử và mô tả giới hạn của website demo.
+Nhiệm vụ dự kiến: Rà soát các trang congcu.html, sosanh.html, danhgia.html, huongdan.html, lienhe.html; cập nhật tài liệu README.md, hướng dẫn chạy thử và mô tả giới hạn của website demo.(Minh không làm Cá Và Ngọc đã phải hoàn thiện) 
 
-4. Trần Bích Ngọc.
+5. Trần Bích Ngọc.
 Tài khoản github: ngoctbk66sptin-hub
 Vai trò: Giao diện và trải nghiệm người dùng
 Nhiệm vụ dự kiến: Phối hợp hoàn thiện giao diện thống nhất, bảng màu xanh teal, bố cục responsive và các thành phần trình bày trong style.css; kiểm tra khả năng hiển thị trên máy tính và thiết bị di động.
