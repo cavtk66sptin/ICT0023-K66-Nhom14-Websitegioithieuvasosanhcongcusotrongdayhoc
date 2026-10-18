@@ -22,7 +22,7 @@ Do Nguyễn Nhật Minh không làm nhiệm vụ nên Vừ Thị Cá có trách 
 + Xây dựng congcu.html, giới thiệu các công cụ số theo 5 nhóm.
 + Chuẩn bị dữ liệu tối thiểu 6 mục cho danh sách chính; có thể dùng 13 công cụ đã dự kiến trong bản ý tưởng.
 + Viết mô tả, mục đích, ưu điểm, hạn chế và chi phí nếu có căn cứ.
-(KHÔNG LÀM)
+(KHÔNG LÀM, CÁ ĐÃ HOÀN THÀNH NHIỆM VỤ NÀY)
 4. Trần Bích Ngọc.
 - Tài khoản github: ngoctbk66sptin-hub
 - Vai trò: Driver
